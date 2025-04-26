@@ -1,0 +1,408 @@
+:root {
+    --primary-color: #ebbe83; /* Beige cálido principal */
+    --secondary-color: #ffddae; /* Marrón claro */
+    --dark-color: #000000f5; /* Marrón oscuro para textos */
+    --light-color: #fdf3de; /* Beige claro de fondo */
+    --accent-color: #C8B6A6; /* Beige medio para acentos */
+    --text-color: #300c0c; /* Color de texto principal */
+    --transition: all 0.3s ease;
+  }
+  
+  /* Fuentes elegantes */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--dark-color);
+  }
+  
+  /* Navbar minimalista */
+  .navbar {
+    padding: 1.2rem 0;
+    background-color: white !important;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  }
+  
+  .navbar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--dark-color) !important;
+    letter-spacing: 0.5px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: var(--secondary-color);
+  }
+  
+  .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 1.5rem;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+  }
+  
+  .navbar-nav .nav-link:hover::after {
+    width: calc(100% - 3rem);
+  } 
+  
+  /* Hero section elegante */
+  .hero-section {
+    background: linear-gradient(rgba(245, 240, 230, 0.9), rgba(245, 240, 230, 0.9)), 
+                url("MAdre.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 0;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+    letter-spacing: 0.5px;
+  }
+  
+  .hero-section .lead {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: var(--dark-color);
+    font-weight: 400;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hero-section .btn {
+    padding: 0.8rem 2.8rem;
+    font-size: 1.1rem;
+    border-radius: 0;
+    background-color: var(--dark-color);
+    color: white;
+    border: 2px solid var(--dark-color);
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+  }
+  
+  .hero-section .btn:hover {
+    background-color: transparent;
+    color: var(--dark-color);
+  }
+  
+  /* Secciones de productos */
+  .section-title {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--secondary-color);
+  }
+  
+  /* Tarjetas de productos */
+  .product-card {
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+    background-color: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  .product-card img {
+    height: 280px;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+  
+  .product-card:hover img {
+    opacity: 0.9;
+  }
+  
+  .product-card .card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-card .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark-color);
+  }
+  
+  .product-card .card-text {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+  
+  .price {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .price .original-price {
+    text-decoration: line-through;
+    font-size: 0.9rem;
+    color: #999;
+    margin-right: 0.5rem;
+  }
+  
+  .price .current-price {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+  }
+  
+  .product-card .btn {
+    border-radius: 0;
+    border: 1px solid var(--dark-color);
+    color: var(--dark-color);
+    padding: 0.5rem 1.2rem;
+    transition: var(--transition);
+    align-self: flex-start;
+  }
+  
+  .product-card .btn:hover {
+    background-color: var(--dark-color);
+    color: white;
+  }
+  
+  /* Carrito de compras */
+  .cart-floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+  }
+  
+  .cart-button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--dark-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+    border: none;
+  }
+  
+  .cart-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+  
+  /* Offcanvas del carrito */
+  .offcanvas {
+    background-color: var(--light-color);
+  }
+  
+  .offcanvas-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .offcanvas-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--dark-color);
+  }
+  
+  .cart-items {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .empty-cart-message {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .cart-total {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding-top: 1.5rem;
+  }
+  
+  .checkout-btn {
+    background-color: var(--dark-color);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0;
+    transition: var(--transition);
+  }
+  
+  .checkout-btn:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Sección de contacto */
+  #contacto {
+    background-color: white;
+    padding: 5rem 0;
+  }
+  
+  #contacto .form-control {
+    border-radius: 0;
+    border: 1px solid #ddd;
+    padding: 0.8rem 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  #contacto .form-control:focus {
+    box-shadow: none;
+    border-color: var(--secondary-color);
+  }
+  
+  #contacto .btn {
+    background-color: var(--dark-color);
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0;
+    transition: var(--transition);
+  }
+  
+  #contacto .btn:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Footer elegante */
+  footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 3rem 0 1.5rem;
+  }
+  
+  footer h5 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  footer p {
+    opacity: 0.8;
+  }
+  
+  footer a {
+    color: white;
+    opacity: 0.7;
+    transition: var(--transition);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  footer a:hover {
+    opacity: 1;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  footer hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: 2rem 0;
+  }
+  
+  /* Badges */
+  .badge-overlay {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1;
+  }
+  
+  .badge {
+    border-radius: 0;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .bg-danger {
+    background-color: #c17b6e !important;
+  }
+  
+  .bg-success {
+    background-color: #8aa07a !important;
+  }
+  
+  .bg-info {
+    background-color: #7a9cc1 !important;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 5rem 0;
+    }
+    
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-section .lead {
+      font-size: 1.1rem;
+    }
+    
+    .navbar-brand {
+      font-size: 1.5rem;
+    }
+  }
